@@ -26,7 +26,7 @@ const Navbar = () => {
   // >>> REFRESH TOKEN
   const RefreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://51.120.7.180:5000/token");
       const decoded = jwtDecode(response.data.newAccessToken);
       console.log(decoded);
       setToken(response.data.newAccessToken);
@@ -39,10 +39,37 @@ const Navbar = () => {
     }
   };
 
+  // const RefreshToken = async () => {
+  //   try {
+  //     const response = await fetch("http://15.29.10.136:5000/token", {
+  //       method: "GET",
+  //       credentials: "include", // Include cookies in the request
+  //       headers: {
+  //         Accept: "application/json",
+  //       },
+  //     });
+
+  //     if (!response.ok) {
+  //       // Handle non-successful responses
+  //       throw new Error(`HTTP error! Status: ${response.status}`);
+  //     }
+
+  //     const responseData = await response.json();
+  //     const decoded = jwtDecode(responseData.newAccessToken);
+  //     console.log(decoded);
+  //     setToken(responseData.newAccessToken);
+  //     setRole(decoded.role);
+  //   } catch (error) {
+  //     console.error(error);
+  //     // Handle errors, for example, redirect to login page
+  //     history("/login");
+  //   }
+  //
+
   // >>> LOGOUT FUNCTIONALITY
   const logout = async () => {
     try {
-      await axios.delete("http://localhost:5000/logout");
+      await axios.delete("http://51.120.7.180:5000/logout");
       history("/login");
     } catch (error) {
       console.log(error);

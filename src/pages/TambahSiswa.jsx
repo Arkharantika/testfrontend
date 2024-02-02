@@ -32,7 +32,7 @@ const TambahSiswa = () => {
 
   const RefreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://51.120.7.180:5000/token");
       setToken(response.data.newAccessToken);
       const decoded = jwtDecode(response.data.newAccessToken);
       console.log(decoded);
@@ -46,7 +46,7 @@ const TambahSiswa = () => {
   const axiosJWT = axios.create();
   axiosJWT.interceptors.request.use(
     async (config) => {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://51.120.7.180:5000/token");
       const decoded = jwtDecode(response.data.newAccessToken);
       config.headers.Authorization = `Bearer ${response.data.newAccessToken}`;
       setToken(response.data.newAccessToken);
@@ -76,7 +76,7 @@ const TambahSiswa = () => {
     formData.append("no_telp", noTelp);
     formData.append("file", file);
     try {
-      await axios.post("http://localhost:5000/siswa", formData, {
+      await axios.post("http://51.120.7.180:5000/siswa", formData, {
         headers: {
           "Content-type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

@@ -27,7 +27,7 @@ const StatistikSiswa = () => {
   const getStat = async (e) => {
     e.preventDefault();
     try {
-      // const response = await axios.post(`http://localhost:5000/statperson`, {
+      // const response = await axios.post(`http://51.120.7.180:5000/statperson`, {
       //   startDate: startDate,
       //   endDate: endDate,
       //   kelaId: kelasnya,
@@ -37,7 +37,7 @@ const StatistikSiswa = () => {
       // setStat(response.data); // Assuming the response is an array
       // console.log(Stat); // Assuming the response is an array
 
-      const pieResponse = await axios.post(`http://localhost:5000/statperson`, {
+      const pieResponse = await axios.post(`http://51.120.7.180:5000/statperson`, {
         startDate: startDate,
         endDate: endDate,
         kelaId: kelasnya,
@@ -49,7 +49,7 @@ const StatistikSiswa = () => {
       console.log("meong");
 
       const response = await axios.post(
-        `http://localhost:5000/statperson/${id}/${kelasnya}`,
+        `http://51.120.7.180:5000/statperson/${id}/${kelasnya}`,
         {
           startDate: startDate,
           endDate: endDate,
@@ -65,7 +65,7 @@ const StatistikSiswa = () => {
 
   const checkDia = async () => {
     // console.log(idnya);
-    const response = await axios.get(`http://localhost:5000/siswa/${id}`);
+    const response = await axios.get(`http://51.120.7.180:5000/siswa/${id}`);
     console.log(response.data);
     setNamaSiswa(response.data.nama_lengkap);
     // setDeskripsi(response.data.deskripsi);
@@ -73,7 +73,7 @@ const StatistikSiswa = () => {
   };
   const checkKelas = async () => {
     // console.log(idnya);
-    const response = await axios.get(`http://localhost:5000/kelas/${kelasnya}`);
+    const response = await axios.get(`http://51.120.7.180:5000/kelas/${kelasnya}`);
     console.log(response.data);
     setNamaKelas(response.data.nama_kelas);
     setDeskripsi(response.data.deskripsi);
@@ -82,7 +82,7 @@ const StatistikSiswa = () => {
 
   const checkListAbsensi = async () => {
     const response = await axios.get(
-      `http://localhost:5000/statperson/${id}/${kelasnya}`
+      `http://51.120.7.180:5000/statperson/${id}/${kelasnya}`
     );
     console.log(response.data);
     setStat(response.data);

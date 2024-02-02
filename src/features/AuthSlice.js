@@ -13,7 +13,7 @@ export const LoginUser = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("http://51.120.7.180:5000/login", {
         email: user.email,
         password: user.password,
       });
@@ -32,7 +32,7 @@ export const LoginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
-    const response = await axios.get("http://localhost:5000/token");
+    const response = await axios.get("http://51.120.7.180:5000/token");
     return response.data;
   } catch (error) {
     if (error.response) {

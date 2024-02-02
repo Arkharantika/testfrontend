@@ -62,7 +62,7 @@ const DaftarSiswa = () => {
 
   // useEffect(() => {
   //   const fetchData = async () => {
-  //     const response = await axios.get("http://localhost:5000/siswa");
+  //     const response = await axios.get("http://51.120.7.180:5000/siswa");
   //     setStudents(response.data);
   //   };
 
@@ -71,13 +71,13 @@ const DaftarSiswa = () => {
 
   const deleteStudent = async (idnya) => {
     console.log(idnya);
-    const response = await axios.delete(`http://localhost:5000/siswa/${idnya}`);
+    const response = await axios.delete(`http://51.120.7.180:5000/siswa/${idnya}`);
     console.log(response.data);
     getStudents();
   };
 
   const getStudents = async () => {
-    const response = await axios.get("http://localhost:5000/siswa");
+    const response = await axios.get("http://51.120.7.180:5000/siswa");
     console.log(response.data);
     setStudents(response.data);
   };

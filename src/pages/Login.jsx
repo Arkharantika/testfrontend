@@ -71,6 +71,52 @@ const Login = () => {
     dispatch(LoginUser({ email, password }));
   };
 
+  // const Auth = async (e) => {
+  //   // var axios = require("axios");
+
+  //   e.preventDefault();
+  //   try {
+  //     // // var axios = require('axios');
+  //     // var data = JSON.stringify({
+  //     //   email: email,
+  //     //   password: password,
+  //     // });
+
+  //     // var config = {
+  //     //   method: "post",
+  //     //   url: "http://localhost:5000/login",
+  //     //   headers: {
+  //     //     "User-Agent": "Apidog/1.0.0 (https://www.apidog.com)",
+  //     //     "Content-Type": "application/json",
+  //     //     Accept: "*/*",
+  //     //     Host: "localhost:5000",
+  //     //     Connection: "keep-alive",
+  //     //   },
+  //     //   data: data,
+  //     // };
+
+  //     // axios(config)
+  //     //   .then(function (response) {
+  //     //     console.log(JSON.stringify(response.data));
+  //     //     return history("/dashboard");
+  //     //   })
+  //     //   .catch(function (error) {
+  //     //     console.log(error);
+  //     //   });
+
+  //     const masuk = await axios.post("http://localhost:5000/login", {
+  //       email: email,
+  //       password: password,
+  //     });
+  //     if (masuk) return navigate("/home");
+  //     navigate("/home");
+  //   } catch (error) {
+  //     if (error.response) {
+  //       setMsg(error.response.data.msg);
+  //     }
+  //   }
+  // };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">

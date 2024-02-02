@@ -12,7 +12,7 @@ const BuatKelas = () => {
   const newKelas = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:5000/kelas`, {
+      await axios.post(`http://51.120.7.180:5000/kelas`, {
         nama_kelas: namaKelas,
         deskripsi: deskripsi,
       });

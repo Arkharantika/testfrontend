@@ -18,7 +18,7 @@ const PilihTanggalAbsensi = () => {
     console.log(tanggal);
     try {
       await axios
-        .post(`http://localhost:5000/checkuntukabsen`, {
+        .post(`http://51.120.7.180:5000/checkuntukabsen`, {
           kelaId: id,
           tanggal: tanggal,
         })

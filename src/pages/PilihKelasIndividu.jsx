@@ -15,13 +15,13 @@ const PilihKelasIndividu = () => {
   }, []);
 
   const getKelas = async () => {
-    const response = await axios.get(`http://localhost:5000/cekkelas/${id}`);
+    const response = await axios.get(`http://51.120.7.180:5000/cekkelas/${id}`);
     console.log(response.data);
     setKelas(response.data);
   };
 
   const getSiswa = async () => {
-    const response = await axios.get(`http://localhost:5000/siswa/${id}`);
+    const response = await axios.get(`http://51.120.7.180:5000/siswa/${id}`);
     console.log(response.data);
     setSiswanya(response.data.nama_lengkap);
   };

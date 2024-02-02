@@ -68,7 +68,7 @@ const ShowAfter = () => {
   }, []);
 
   const checkKelas = async () => {
-    const response = await axios.get(`http://localhost:5000/kelas/${id}`);
+    const response = await axios.get(`http://51.120.7.180:5000/kelas/${id}`);
     console.log(response.data);
     setNamaKelas(response.data.nama_kelas);
     return response;
@@ -76,16 +76,16 @@ const ShowAfter = () => {
 
   const getMurid = async () => {
     const response = await axios.get(
-      `http://localhost:5000/showafter/${id}/${datenya}`
+      `http://51.120.7.180:5000/showafter/${id}/${datenya}`
     );
     console.log("response");
     console.log(response);
-    // console.log("http://localhost:5000/muridkelas/", id);
+    // console.log("http://51.120.7.180:5000/muridkelas/", id);
     setStudents(response.data);
   };
 
   const isiHadir = async (meong) => {
-    const response = await axios.patch(`http://localhost:5000/isipresensi`, {
+    const response = await axios.patch(`http://51.120.7.180:5000/isipresensi`, {
       statusnya: "hadir",
       idPresensi: meong,
     });
@@ -94,7 +94,7 @@ const ShowAfter = () => {
   };
 
   const isiIzin = async (meong) => {
-    const response = await axios.patch(`http://localhost:5000/isipresensi`, {
+    const response = await axios.patch(`http://51.120.7.180:5000/isipresensi`, {
       statusnya: "izin",
       idPresensi: meong,
     });

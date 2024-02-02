@@ -71,7 +71,7 @@ const InfoKelas = () => {
 
   const checkKelas = async () => {
     // console.log(idnya);
-    const response = await axios.get(`http://localhost:5000/kelas/${id}`);
+    const response = await axios.get(`http://51.120.7.180:5000/kelas/${id}`);
     console.log(response.data);
     setNamaKelas(response.data.nama_kelas);
     setDeskripsi(response.data.deskripsi);
@@ -80,7 +80,7 @@ const InfoKelas = () => {
 
   const daftarkan = async (idnya) => {
     console.log(idnya);
-    const response = await axios.patch(`http://localhost:5000/masukanmurid/`, {
+    const response = await axios.patch(`http://51.120.7.180:5000/masukanmurid/`, {
       siswaId: idnya,
       kelaId: id,
     });
@@ -90,16 +90,16 @@ const InfoKelas = () => {
 
   const getMurid = async () => {
     const response = await axios.get(
-      `http://localhost:5000/listmuridkelas/${id}`
+      `http://51.120.7.180:5000/listmuridkelas/${id}`
     );
     console.log("murid kelas");
-    console.log("http://localhost:5000/muridkelas/", id);
+    console.log("http://51.120.7.180:5000/muridkelas/", id);
     setStudents(response.data);
   };
 
   const getListAbsen = async () => {
     const datanya = await axios.get(
-      `http://localhost:5000/daftarpresensi/${id}`
+      `http://51.120.7.180:5000/daftarpresensi/${id}`
     );
     setDaftar(datanya.data);
     console.log("datanya");

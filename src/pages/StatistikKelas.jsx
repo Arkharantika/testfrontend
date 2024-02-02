@@ -21,7 +21,7 @@ const StatistikKelas = () => {
   }, []);
   const checkKelas = async () => {
     // console.log(idnya);
-    const response = await axios.get(`http://localhost:5000/kelas/${id}`);
+    const response = await axios.get(`http://51.120.7.180:5000/kelas/${id}`);
     console.log(response.data);
     setNamaKelas(response.data.nama_kelas);
     setDeskripsi(response.data.deskripsi);
@@ -32,7 +32,7 @@ const StatistikKelas = () => {
   const getStat = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/statkelas`, {
+      const response = await axios.post(`http://51.120.7.180:5000/statkelas`, {
         startDate: startDate,
         endDate: endDate,
         kelaId: id,
@@ -42,7 +42,7 @@ const StatistikKelas = () => {
       console.log(Stat); // Assuming the response is an array
 
       const pieResponse = await axios.post(
-        `http://localhost:5000/percentkelas`,
+        `http://51.120.7.180:5000/percentkelas`,
         {
           startDate: startDate,
           endDate: endDate,

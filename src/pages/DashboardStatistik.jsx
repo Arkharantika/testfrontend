@@ -14,13 +14,13 @@ const DashboardStatistik = () => {
   let [kelas, setKelas] = useState([]);
 
   const getStudents = async () => {
-    const response = await axios.get("http://localhost:5000/siswa");
+    const response = await axios.get("http://51.120.7.180:5000/siswa");
     console.log(response.data);
     setSiswa(response.data);
   };
 
   const getKelas = async () => {
-    const response = await axios.get("http://localhost:5000/kelas");
+    const response = await axios.get("http://51.120.7.180:5000/kelas");
     console.log(response.data);
     setKelas(response.data);
   };

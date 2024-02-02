@@ -33,7 +33,7 @@ const EditSiswa = () => {
 
   const RefreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://51.120.7.180:5000/token");
       setToken(response.data.newAccessToken);
       const decoded = jwtDecode(response.data.newAccessToken);
       console.log(decoded);
@@ -52,7 +52,7 @@ const EditSiswa = () => {
     async (config) => {
       //   const currentDate = new Date();
       //   if (expire * 1000 < currentDate.getTime()) {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://51.120.7.180:5000/token");
       const decoded = jwtDecode(response.data.newAccessToken);
       config.headers.Authorization = `Bearer ${response.data.newAccessToken}`;
       console.log(decoded);
@@ -83,7 +83,7 @@ const EditSiswa = () => {
     formData.append("alamat", alamat);
     formData.append("no_telp", noTelp);
     try {
-      await axios.patch(`http://localhost:5000/siswa/${id}`, formData, {
+      await axios.patch(`http://51.120.7.180:5000/siswa/${id}`, formData, {
         headers: {
           "Content-type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ const EditSiswa = () => {
   };
 
   const getSpecificStudent = async () => {
-    const response = await axiosJWT.get(`http://localhost:5000/siswa/${id}`, {
+    const response = await axiosJWT.get(`http://51.120.7.180:5000/siswa/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -114,7 +114,7 @@ const EditSiswa = () => {
     setKelompok(response.data.kelompok);
     setDesa(response.data.desa);
     setDaerah(response.data.daerah);
-    setPreview("http://localhost:5000/images/" + response.data.foto);
+    setPreview("http://51.120.7.180:5000/images/" + response.data.foto);
     // setPreview(response.data.url);
   };
   const loadImage = (e) => {

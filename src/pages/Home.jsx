@@ -18,7 +18,7 @@ const Home = () => {
   // >>> REFRESH TOKEN
   const RefreshToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("http://51.120.7.180:5000/token");
       const decoded = jwtDecode(response.data.newAccessToken);
       console.log(decoded);
       setToken(response.data.newAccessToken);
